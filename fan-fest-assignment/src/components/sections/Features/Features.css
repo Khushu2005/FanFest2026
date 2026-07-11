@@ -1,0 +1,99 @@
+.features-section {
+  background-color: #111113;
+  padding: 4rem 1.5rem;
+  color: #F4F4F5;
+}
+@media (min-width: 768px) {
+  .features-section {
+    padding: 6rem 4rem;
+  }
+}
+.features-section .features-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.features-section .features-header {
+  text-align: left;
+  margin-bottom: 3rem;
+}
+.features-section .features-header .section-badge {
+  font-family: "DM Sans", sans-serif;
+  color: #FF3C3C;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 1rem;
+}
+.features-section .features-header .section-title {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(3.5rem, 8vw, 4.3rem);
+  line-height: 1;
+  letter-spacing: 1px;
+  margin-bottom: 1.5rem;
+}
+.features-section .features-header .section-desc {
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.8rem;
+  color: #a1a1aa;
+  max-width: 600px;
+  line-height: 1.6;
+}
+@media (min-width: 768px) {
+  .features-section .features-header .section-desc {
+    font-size: 1rem;
+  }
+}
+.features-section .features-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+@media (min-width: 768px) {
+  .features-section .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+@media (min-width: 1200px) {
+  .features-section .features-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+.features-section .features-grid .feature-card {
+  background-color: #18181C;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: background-color 0.3s ease;
+}
+.features-section .features-grid .feature-card:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+.features-section .features-grid .icon-box {
+  background-color: #341C20;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.features-section .features-grid .card-title {
+  font-family: "DM Sans", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #F4F4F5;
+  margin-bottom: 0.8rem;
+}
+.features-section .features-grid .card-desc {
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.95rem;
+  color: #a1a1aa;
+  line-height: 1.5;
+}/*# sourceMappingURL=Features.css.map */

@@ -1,0 +1,97 @@
+.eligibility-section {
+  background-color: #111113;
+  padding: 4rem 1.5rem;
+  color: #F4F4F5;
+}
+@media (min-width: 768px) {
+  .eligibility-section {
+    padding: 6rem 4rem;
+  }
+}
+.eligibility-section .eligibility-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.eligibility-section .eligibility-header {
+  text-align: left;
+  margin-bottom: 3.5rem;
+}
+.eligibility-section .eligibility-header .section-badge {
+  font-family: "DM Sans", sans-serif;
+  color: #FF3C3C;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 1rem;
+}
+.eligibility-section .eligibility-header .section-title {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(3.5rem, 8vw, 4rem);
+  line-height: 0.85;
+  letter-spacing: 1px;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+.eligibility-section .eligibility-header .section-desc {
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.7rem;
+  color: #a1a1aa;
+  max-width: 530px;
+  line-height: 1.6;
+}
+@media (min-width: 768px) {
+  .eligibility-section .eligibility-header .section-desc {
+    font-size: 1.01rem;
+  }
+}
+.eligibility-section .eligibility-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.9rem;
+}
+@media (min-width: 400px) {
+  .eligibility-section .eligibility-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 768px) {
+  .eligibility-section .eligibility-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+}
+@media (min-width: 1100px) {
+  .eligibility-section .eligibility-grid {
+    grid-template-columns: repeat(7, 1fr);
+  }
+}
+.eligibility-section .eligibility-grid .category-card {
+  background-color: #18181C;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 12px;
+  padding: 2.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+.eligibility-section .eligibility-grid .category-card:hover {
+  background-color: rgb(31.0615384615, 31.0615384615, 36.2384615385);
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+.eligibility-section .eligibility-grid .category-icon {
+  font-size: 2.2rem;
+  line-height: 1;
+}
+.eligibility-section .eligibility-grid .category-label {
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #F4F4F5;
+}/*# sourceMappingURL=Eligibility.css.map */

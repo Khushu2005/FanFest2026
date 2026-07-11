@@ -1,0 +1,104 @@
+.perks-section {
+  background-color: #09090b;
+  padding: 4rem 1.5rem;
+  color: #F4F4F5;
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+}
+@media (min-width: 768px) {
+  .perks-section {
+    padding: 6rem 4rem;
+  }
+}
+.perks-section .perks-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.perks-section .perks-header {
+  text-align: left;
+  margin-bottom: 3.5rem;
+}
+.perks-section .perks-header .section-badge {
+  font-family: "DM Sans", sans-serif;
+  color: #FF3C3C;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 1rem;
+}
+.perks-section .perks-header .section-title {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(3.5rem, 8vw, 4rem);
+  line-height: 0.85;
+  letter-spacing: 1px;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+.perks-section .perks-header .section-desc {
+  font-family: "DM Sans", sans-serif;
+  font-size: 1rem;
+  color: #a1a1aa;
+  max-width: 600px;
+  line-height: 1.6;
+}
+@media (min-width: 768px) {
+  .perks-section .perks-header .section-desc {
+    font-size: 1.1rem;
+  }
+}
+.perks-section .perks-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+@media (min-width: 768px) {
+  .perks-section .perks-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+@media (min-width: 1200px) {
+  .perks-section .perks-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.perks-section .perks-grid .perk-card {
+  background-color: #18181C;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 12px;
+  padding: 1.5rem 1.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.perks-section .perks-grid .perk-number {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 2.2rem;
+  color: #FF3C3C;
+  line-height: 0.9;
+  min-width: 35px;
+}
+@media (min-width: 768px) {
+  .perks-section .perks-grid .perk-number {
+    font-size: 2.5rem;
+  }
+}
+.perks-section .perks-grid .perk-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.perks-section .perks-grid .card-title {
+  font-family: "DM Sans", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #F4F4F5;
+  line-height: 1.3;
+}
+.perks-section .perks-grid .card-desc {
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.9rem;
+  color: #a1a1aa;
+  line-height: 1.6;
+}/*# sourceMappingURL=Perks.css.map */

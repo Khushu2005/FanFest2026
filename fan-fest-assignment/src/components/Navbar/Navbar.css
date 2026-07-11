@@ -1,0 +1,43 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 2rem;
+  background: rgba(9, 9, 11, 0.7);
+  backdrop-filter: blur(12px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  border-bottom: 1px solid rgba(244, 244, 245, 0.05);
+}
+@media (min-width: 768px) {
+  .navbar {
+    padding: 1rem 4rem;
+  }
+}
+.navbar .logo {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+  color: #F4F4F5;
+}
+.navbar .logo span {
+  color: #FF3C3C;
+}
+.navbar .nav-btn {
+  font-family: "DM Sans", sans-serif;
+  background-color: #FF3C3C;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.5rem;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.navbar .nav-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 60, 60, 0.4);
+}/*# sourceMappingURL=Navbar.css.map */

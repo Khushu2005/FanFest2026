@@ -1,0 +1,108 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.eligibility-section {
+  background-color: $bg-color-features; // Alternating back to darkest background
+  padding: 4rem 1.5rem; 
+  color: $text-main;
+
+  @include md {
+    padding: 6rem 4rem; 
+  }
+
+  .eligibility-container {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  // HEADER STYLING (Consistent with previous sections)
+  .eligibility-header {
+    text-align: left;
+    margin-bottom: 3.5rem;
+
+    .section-badge {
+      font-family: $font-body;
+      color: $primary;
+      font-size: 0.75rem;
+   
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: $font-heading; // Bebas Neue
+      font-size: clamp(3.5rem, 8vw, 4rem); 
+      line-height: 0.85;
+      letter-spacing: 1px;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+    }
+
+    .section-desc {
+      font-family: $font-body; 
+      font-size: 0.7rem;
+      color: $text-muted;
+      max-width: 530px; 
+      line-height: 1.6;
+
+      @include md {
+        font-size: 1.01rem;
+      }
+    }
+  }
+
+  // EXACT RESPONSIVE GRID
+  .eligibility-grid {
+    display: grid;
+    grid-template-columns: 1fr; // Chota Mobile (iPhone 14 Pro)
+    gap: 0.9rem;
+
+    @media (min-width: 400px) {
+      grid-template-columns: repeat(2, 1fr); // Bada Mobile (Pixel 7 Pro)
+    }
+
+    @include md {
+      grid-template-columns: repeat(3, 1fr); // Tablet (iPad)
+      gap: 1rem;
+    }
+
+    @media (min-width: 1100px) {
+      grid-template-columns: repeat(7, 1fr); // Desktop (MacBook) - 7 cards top row, 3 wrap to bottom
+    }
+
+    .category-card {
+      background-color: $card-bg; 
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      border-radius: 12px;
+      padding: 2.5rem 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      text-align: center;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      cursor: pointer;
+
+      &:hover {
+        background-color: lighten($card-bg, 3%);
+        transform: translateY(-4px);
+        border-color: rgba(255, 255, 255, 0.1);
+      }
+    }
+
+    .category-icon {
+      font-size: 2.2rem; // Large emojis exactly like the image
+      line-height: 1;
+    }
+
+    .category-label {
+      font-family: $font-body;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: $text-main;
+    }
+  }
+}

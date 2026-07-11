@@ -1,0 +1,112 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.features-section {
+  background-color: $bg-color-features;
+  padding: 4rem 1.5rem; // Mobile padding
+  color: $text-main;
+
+  @include md {
+    padding: 6rem 4rem; // Desktop padding
+  }
+
+  .features-container {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  // HEADER STYLING
+  .features-header {
+    text-align: left;
+    margin-bottom: 3rem;
+
+    .section-badge {
+      font-family: $font-body;
+      color: $primary;
+      font-size: 0.75rem;
+     
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: $font-heading; // Bebas Neue
+      font-size: clamp(3.5rem, 8vw, 4.3rem); // Fluid typography
+      line-height: 1;
+      letter-spacing: 1px;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-desc {
+      font-family: $font-body; // DM Sans
+      font-size: 0.8rem;
+      color: $text-muted;
+      max-width: 600px;
+      line-height: 1.6;
+
+      @include md {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  // GRID & CARD STYLING
+  .features-grid {
+    display: grid;
+    grid-template-columns: 1fr; // Mobile: 1 column
+    gap: 1.5rem;
+
+    @include md {
+      grid-template-columns: repeat(2, 1fr); // Tablet: 2 columns
+      gap: 2rem;
+    }
+
+    @media (min-width: 1200px) {
+      grid-template-columns: repeat(5, 1fr); // Desktop: 5 columns (6th drops to next line exactly like image)
+    }
+
+    .feature-card {
+      background-color: $card-bg ;// Slight lighter dark background
+      border: 1px solid rgba(255, 255, 255, 0.05); // Subtle border
+      border-radius: 12px;
+      padding: 1.8rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.05);
+      }
+    }
+
+    .icon-box {
+      background-color: $icon-bg;// Dark box for icon
+      width: 45px;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .card-title {
+      font-family: $font-body;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: $text-main;
+      margin-bottom: 0.8rem;
+    }
+
+    .card-desc {
+      font-family: $font-body;
+      font-size: 0.95rem;
+      color: $text-muted;
+      line-height: 1.5;
+    }
+  }
+}

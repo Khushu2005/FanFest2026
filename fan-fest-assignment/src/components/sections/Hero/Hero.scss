@@ -1,0 +1,199 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem 1rem; // Sides me thodi padding mobile ke liye
+  background-color: $bg-color;
+  overflow: hidden;
+
+  // The Magic Glowy Effect (Same as before)
+// The Magic Glowy Effect
+  .glow-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    // Dual Glow: 1st hai Top Red, 2nd hai Bottom-Right Yellow
+    background: 
+      radial-gradient(circle at 39% 6%, rgba($primary, 0.15) 0%, transparent 30%),
+      radial-gradient(circle at 79% 95%, rgba(255, 170, 0, 0.12) 0%, transparent 20%);
+    z-index: 1;
+    pointer-events: none; 
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+    margin-top: 40px;
+  }
+
+  .hero-badge {
+    font-family: $font-body;
+    font-size: 0.7rem; // Mobile pe thoda chota
+    // font-weight: 600;
+    color: $primary;
+    letter-spacing: 1.5px;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    @include md {
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+    }
+  }
+
+  .hero-title {
+    font-family: $font-heading;
+    // CLAMP: Mobile me 4rem, screen badhne pe scale hoga, max 10.5rem tak jayega
+    font-size: clamp(4rem, 14vw, 10.5rem); 
+    line-height: 0.85; 
+    color: $text-main;
+    margin-bottom: 1.5rem;
+    letter-spacing: 2px; // Mobile pe spacing kam taaki fit ho
+    text-transform: uppercase;
+
+    .highlight {
+      color: $primary;
+    }
+
+    @include md {
+      margin-bottom: 2rem;
+      letter-spacing: 5px; // Desktop pe wapas normal spacing
+      line-height: 0.89;
+    }
+  }
+
+  .hero-desc {
+    font-family: $font-body;
+    font-size: 0.95rem; // Mobile ke liye perfect size
+    color: $text-muted;
+    max-width: 520px;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+    padding: 0 0.5rem; // Text edges se na chipke
+
+    @include md {
+      font-size: 1.15rem;
+      margin-bottom: 3rem;
+      padding: 0;
+    }
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    max-width: 320px; // FIRST IMAGE TRICK: Mobile buttons full stretch nahi honge
+    align-items: center;
+
+    @include md {
+      flex-direction: row;
+      justify-content: center;
+      max-width: none; // Desktop pe constraint hata diya
+      width: auto;
+      gap: 1.5rem;
+    }
+
+    button {
+      font-family: $font-body;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 1.1rem 2.5rem;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      width: 100%; // Apne 320px container ko fill karega (Mobile)
+      
+      @include md {
+        width: auto; // Content ke hisaab se size (Desktop)
+      }
+    }
+
+    .btn-primary {
+      background-color: $primary;
+      color: #fff;
+      border: none;
+
+      &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 25px rgba($primary, 0.4); 
+      }
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      color: $text-main; 
+      border: 1px solid rgba($text-muted, 0.4);
+
+      &:hover {
+        background-color: rgba($text-muted, 0.1);
+        border-color: $text-main;
+      }
+    }
+  }
+  // ... tumhara pehle ka .hero-actions ka code yahan end ho raha hai ...
+
+  // NAYA STATS STYLING
+  .hero-stats {
+    display: flex;
+    flex-wrap: wrap; // Mobile pe wrap karne ke liye
+    justify-content: center;
+    column-gap: 1.5rem; // Beech ki space
+    row-gap: 2rem; // Jab line break ho tab ki space
+    margin-top: 4rem; // Buttons se doori
+    width: 100%;
+    max-width: 400px; // Mobile pe 4th item wrap force karne ke liye max-width
+
+    @include md {
+      max-width: none; // Desktop pe ek line me laane ke liye constraint hata diya
+      column-gap: 4rem; 
+      margin-top: 5rem;
+    }
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .stat-value {
+      font-family: $font-heading; // Bebas Neue
+      font-size: 1.9rem;
+      color: #FF8C00; // Exact golden/yellow match 
+      line-height: 1;
+      letter-spacing: 1px;
+
+      @include md {
+        font-size: 2rem;
+      }
+    }
+
+    .stat-label {
+      font-family: $font-body; // DM Sans
+      font-size: 0.65rem;
+      color:$stat-label;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 600;
+
+      @include md {
+        font-size: 0.7rem;
+      }
+    }
+  }
+} 

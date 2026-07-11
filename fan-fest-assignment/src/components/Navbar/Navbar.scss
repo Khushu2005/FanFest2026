@@ -1,0 +1,51 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 2rem;
+  background: rgba($bg-color, 0.7); // Transparent for glowy effect
+  backdrop-filter: blur(12px); // Glassmorphism feel
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  border-bottom: 1px solid rgba($text-main, 0.05); // Extremely subtle border
+
+  @include md {
+    padding: 1rem 4rem; // More breathing room on desktop
+  }
+
+  .logo {
+    font-family: $font-heading; // Bebas ki jagah DM Sans use karenge logo ke liye taaki clean bold dikhe
+    font-size: 1.6rem; // Chota kar diya
+    // font-weight: 800; // Ekdum bold
+    letter-spacing: 1px; // Letter spacing kam kardi
+    color: $text-main;
+    
+    span { 
+      color: $primary; 
+    }
+  }
+
+  .nav-btn {
+    font-family: $font-body;
+    background-color: $primary;
+    color: #fff;
+    border: none;
+    padding: 0.6rem 1.5rem;
+    border-radius: 50px; // Pill shape
+    font-size: 0.95rem;
+    // font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba($primary, 0.4); // Glow effect
+    }
+  }
+}

@@ -1,0 +1,118 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.perks-section {
+  background-color: $bg-color; // Naya darker background variant
+  padding: 4rem 1.5rem; 
+  color: $text-main;
+  border-top: 1px solid rgba(255, 255, 255, 0.03); // Subtle separator from previous section
+
+  @include md {
+    padding: 6rem 4rem; 
+  }
+
+  .perks-container {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  // HEADER STYLING (Similar to Features but with adjustments)
+  .perks-header {
+    text-align: left;
+    margin-bottom: 3.5rem;
+
+    .section-badge {
+      font-family: $font-body;
+      color: $primary;
+      font-size: 0.75rem;
+      
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: $font-heading; // Bebas Neue
+      font-size: clamp(3.5rem, 8vw, 4rem); 
+      line-height: 0.85;
+      letter-spacing: 1px;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+    }
+
+    .section-desc {
+      font-family: $font-body; 
+      font-size: 1rem;
+      color: $text-muted;
+      max-width: 600px; // Image me ye text thoda narrow hai
+      line-height: 1.6;
+
+      @include md {
+        font-size: 1.1rem;
+      }
+    }
+  }
+
+  // GRID & CARD STYLING
+  .perks-grid {
+    display: grid;
+    grid-template-columns: 1fr; // Mobile: 1 column
+    gap: 1.5rem;
+
+    @include md {
+      grid-template-columns: repeat(2, 1fr); // Tablet: 2 columns
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 1200px) {
+      grid-template-columns: repeat(4, 1fr); // Desktop: 4 columns
+    }
+
+    .perk-card {
+      background-color: $card-bg; // Naya card background variable
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      border-radius: 12px;
+      padding: 1.5rem 1.5rem;
+      display: flex; // Flex row to keep number and text side-by-side
+      align-items: flex-start;
+      gap: 1.2rem;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+
+     
+    }
+
+    .perk-number {
+      font-family: $font-heading;
+      font-size: 2.2rem;
+      color: $primary; // Red numbers
+      line-height: 0.9;
+      min-width: 35px; // Ensures number doesn't shrink
+      
+      @include md {
+        font-size: 2.5rem;
+      }
+    }
+
+    .perk-info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .card-title {
+      font-family: $font-body;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: $text-main;
+      line-height: 1.3;
+    }
+
+    .card-desc {
+      font-family: $font-body;
+      font-size: 0.9rem;
+      color: $text-muted;
+      line-height: 1.6;
+    }
+  }
+}
