@@ -1,0 +1,122 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.timeline-section {
+  background-color: $bg-color; // Alternating dark bg
+  padding: 4rem 1.5rem; 
+  color: $text-main;
+
+  @include md {
+    padding: 6rem 4rem; 
+  }
+
+  .timeline-container {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  // HEADER STYLING 
+  .timeline-header {
+    text-align: left;
+    margin-bottom: 4rem;
+
+    .section-badge {
+      font-family: $font-body;
+      color: $primary;
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: $font-heading; // Bebas Neue
+      font-size: clamp(3.5rem, 8vw, 4rem); 
+      line-height: 0.85;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+  }
+
+  // TIMELINE STYLING
+  .timeline-list {
+    display: flex;
+    flex-direction: column;
+    max-width: 800px; // Image me text left side me confined hai
+  }
+
+  .timeline-item {
+    display: flex;
+    gap: 1.5rem;
+    position: relative;
+    min-height: 120px; // Ensures spacing even if text is short
+
+    @include md {
+      gap: 2.5rem;
+    }
+
+    .node-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 40px; // Fixed width to align line perfectly
+    }
+
+    .node {
+      width: 40px;
+      height: 40px;
+      background-color: $primary; // Red circle
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: $font-body;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fff;
+      z-index: 2; // Sits on top of the line
+      flex-shrink: 0;
+    }
+
+    .line {
+      width: 2px;
+      background-color: $primary; // Orange connecting line
+      flex-grow: 1;
+      margin-top: 0px;
+      margin-bottom: -10px; // Pulls line down into the next item
+      z-index: 1;
+    }
+
+    .content {
+      padding-bottom: 2rem; // Spacing before the next item starts
+      padding-top: 0rem; // Aligns text with the circle
+    }
+
+    .date {
+      font-family: $font-body;
+      font-size: 0.8rem;
+      color: #FFAA00; // Orange date text
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+
+    .title {
+      font-family: $font-body;
+      font-size: 1rem;
+      font-weight: 700;
+      color: $text-main;
+      margin-bottom: 0.3rem;
+    }
+
+    .desc {
+      font-family: $font-body;
+      font-size: 0.9rem;
+      color: $text-muted;
+      line-height: 1.6;
+      max-width: 550px;
+    }
+  }
+}

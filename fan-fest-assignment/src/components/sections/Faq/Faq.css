@@ -1,0 +1,97 @@
+.faq-section {
+  background-color: #111113;
+  padding: 4rem 1.5rem;
+  color: #F4F4F5;
+}
+@media (min-width: 768px) {
+  .faq-section {
+    padding: 6rem 4rem;
+  }
+}
+.faq-section .faq-container {
+  max-width: 800px;
+  margin: 0;
+}
+.faq-section .faq-header {
+  margin-bottom: 3rem;
+}
+.faq-section .faq-header .section-badge {
+  font-family: "DM Sans", sans-serif;
+  color: #FF3C3C;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 1rem;
+}
+.faq-section .faq-header .section-title {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(3rem, 7vw, 4rem);
+  line-height: 0.55;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.faq-section .faq-list {
+  display: flex;
+  flex-direction: column;
+}
+.faq-section .faq-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+.faq-section .faq-item:first-child {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+.faq-section .faq-item.open .icon {
+  transform: rotate(45deg);
+  color: #FF3C3C;
+}
+.faq-section .faq-item.open .faq-question {
+  color: #fff;
+}
+.faq-section .faq-question {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 1.8rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "DM Sans", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #F4F4F5;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+@media (min-width: 768px) {
+  .faq-section .faq-question {
+    font-size: 1rem;
+  }
+}
+.faq-section .faq-question:hover {
+  color: #fff;
+}
+.faq-section .faq-question .icon {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #FF3C3C;
+  transition: transform 0.3s ease;
+  margin-left: 1rem;
+}
+.faq-section .faq-answer-wrapper {
+  overflow: hidden;
+}
+.faq-section .faq-answer {
+  padding-bottom: 2rem;
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.95rem;
+  color: #a1a1aa;
+  line-height: 1.6;
+  max-width: 90%;
+}
+@media (min-width: 768px) {
+  .faq-section .faq-answer {
+    font-size: 0.9rem;
+  }
+}/*# sourceMappingURL=Faq.css.map */

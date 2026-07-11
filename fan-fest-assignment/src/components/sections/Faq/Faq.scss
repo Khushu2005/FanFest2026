@@ -1,0 +1,114 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.faq-section {
+  background-color: $bg-color-features; // #111113 pattern maintain karne ke liye
+  padding: 4rem 1.5rem;
+  color: $text-main;
+
+  @include md {
+    padding: 6rem 4rem;
+  }
+
+  .faq-container {
+    max-width: 800px; // Image me ye left aligned aur limited width me hai
+    margin: 0; // Keep it left-aligned like the screenshot
+    
+  
+  }
+
+  .faq-header {
+    margin-bottom: 3rem;
+
+    .section-badge {
+      font-family: $font-body;
+      color: $primary;
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: $font-heading;
+      font-size: clamp(3rem, 7vw, 4rem);
+      line-height: 0.55;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
+    &:first-child {
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    &.open {
+      .icon {
+        transform: rotate(45deg); // + rotates to become x
+        color: $primary;
+      }
+      .faq-question {
+        color: #fff;
+      }
+    }
+  }
+
+  .faq-question {
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    padding: 1.8rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: $font-body;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: $text-main;
+    cursor: pointer;
+    transition: color 0.3s ease;
+
+    @include md {
+      font-size: 1rem;
+    }
+
+    &:hover {
+      color: #fff;
+    }
+
+    .icon {
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: $primary;
+      transition: transform 0.3s ease;
+      margin-left: 1rem;
+    }
+  }
+
+  .faq-answer-wrapper {
+    overflow: hidden;
+  }
+
+  .faq-answer {
+    padding-bottom: 2rem;
+    font-family: $font-body;
+    font-size: 0.95rem;
+    color: $text-muted;
+    line-height: 1.6;
+    max-width: 90%; // Don't let text touch the far right edge
+
+    @include md {
+      font-size: 0.9rem;
+    }
+  }
+}

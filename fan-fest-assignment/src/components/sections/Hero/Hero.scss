@@ -8,12 +8,11 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 2rem 1rem; // Sides me thodi padding mobile ke liye
+  padding: 2rem 1rem; 
   background-color: $bg-color;
   overflow: hidden;
 
-  // The Magic Glowy Effect (Same as before)
-// The Magic Glowy Effect
+
   .glow-bg {
     position: absolute;
     top: 0;
@@ -22,8 +21,8 @@
     height: 100%;
     // Dual Glow: 1st hai Top Red, 2nd hai Bottom-Right Yellow
     background: 
-      radial-gradient(circle at 39% 6%, rgba($primary, 0.15) 0%, transparent 30%),
-      radial-gradient(circle at 79% 95%, rgba(255, 170, 0, 0.12) 0%, transparent 20%);
+      radial-gradient(circle at 39% 10%, rgba($primary, 0.15) 0%, transparent 30%),
+      radial-gradient(circle at 79% 80%, rgba(255, 170, 0, 0.12) 0%, transparent 20%);
     z-index: 1;
     pointer-events: none; 
   }
@@ -35,13 +34,13 @@
     flex-direction: column;
     align-items: center;
     max-width: 800px;
-    margin-top: 40px;
+    margin-top: 55px;
   }
 
   .hero-badge {
     font-family: $font-body;
-    font-size: 0.7rem; // Mobile pe thoda chota
-    // font-weight: 600;
+    font-size: 0.7rem; 
+   
     color: $primary;
     letter-spacing: 1.5px;
     margin-bottom: 1.5rem;
@@ -145,7 +144,7 @@
       }
     }
   }
-  // ... tumhara pehle ka .hero-actions ka code yahan end ho raha hai ...
+
 
   // NAYA STATS STYLING
   .hero-stats {

@@ -1,0 +1,259 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.application-section {
+  background-color: $bg-color; // Main body background
+  padding: 4rem 1.2rem;
+  
+  @include md {
+    padding: 6rem 4rem;
+  }
+
+  .application-container {
+    max-width: 900px; // Image form ki width thodi constrained hoti hai
+    margin: 0 auto;
+  }
+
+  .form-card {
+    background-color: $card-bg; // Lighter dark card (#111113)
+    border-radius: 16px;
+    padding: 2.5rem 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+
+    @include md {
+      padding: 4rem;
+    }
+  }
+
+  // Header 
+  .form-header {
+    margin-bottom: 3rem;
+
+    .form-title {
+      font-family: $font-heading;
+      font-size: clamp(2.5rem, 6vw, 3rem);
+      color: $text-main;
+      letter-spacing: 1px;
+      margin-bottom: 0.5rem;
+    }
+
+    .form-subtitle {
+      font-family: $font-body;
+      font-size: 0.95rem;
+      color: $text-muted;
+
+      @include md {
+        font-size: 1.1rem;
+      }
+    }
+  }
+
+  // Form Sections & Rows
+  .form-section {
+    margin-bottom: 2rem;
+
+    .section-heading {
+      font-family: $font-body;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: $primary; // Red section titles
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr; // Mobile: 1 column
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+
+    @include md {
+      grid-template-columns: 1fr 1fr; // Desktop: 2 columns
+      gap: 2rem;
+    }
+  }
+
+  .form-divider {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    margin: 3rem 0;
+  }
+
+  // Inputs & Labels
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+
+    &.full-width {
+      margin-bottom: 1.5rem;
+    }
+
+    label {
+      font-family: $font-body;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: $text-main;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+
+      span {
+        color: $primary; // Red asterisk
+      }
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="url"],
+    select,
+    textarea {
+      background-color: $bg-color; // Darkest background inside inputs (#09090b)
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 8px;
+      padding: 1rem 1.2rem;
+      color: $text-main;
+      font-family: $font-body;
+      font-size: 0.95rem;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      width: 100%;
+
+      &::placeholder {
+        color: rgba($text-muted, 0.5);
+      }
+
+      &:focus {
+        outline: none;
+        border-color: $primary;
+        box-shadow: 0 0 0 3px rgba($primary, 0.15);
+      }
+    }
+
+    select {
+      appearance: none; // Removes default dropdown arrow to make it cleaner
+      cursor: pointer;
+      background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23a1a1aa%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1.2rem top 50%;
+      background-size: 0.65rem auto;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+  }
+
+  // Checkboxes
+  .checkbox-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+    margin-top: 0.5rem;
+
+    @include md {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .checkbox-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-top: 0.5rem;
+  }
+
+  .checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    font-family: $font-body;
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    line-height: 1.4;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+
+    &.red-text {
+      color: $primary; // All checkbox text is red like the image
+      
+      span {
+        color: $primary; // Asterisk
+      }
+    }
+
+    input[type="checkbox"] {
+      appearance: none;
+      background-color: $text-main; // White checkbox box
+      margin: 0;
+      width: 18px;
+      height: 18px;
+      border-radius: 3px;
+      display: grid;
+      place-content: center;
+      cursor: pointer;
+      flex-shrink: 0;
+      margin-top: 2px; // aligns perfectly with text
+
+      &::before {
+        content: "";
+        width: 10px;
+        height: 10px;
+        transform: scale(0);
+        transition: 120ms transform ease-in-out;
+        box-shadow: inset 1em 1em $primary;
+        transform-origin: center;
+        clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+      }
+
+      &:checked::before {
+        transform: scale(1);
+      }
+    }
+  }
+
+  .agreements {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  // Submit Button Area
+  .form-submit-wrapper {
+    text-align: center;
+    margin-top: 2rem;
+
+    .submit-btn {
+      background-color: $primary;
+      color: #fff;
+      font-family: $font-body;
+      font-size: 1.1rem;
+      font-weight: 700;
+      border: none;
+      padding: 1.2rem 3rem;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      width: 100%;
+      max-width: 400px;
+      margin-bottom: 1.5rem;
+
+      &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba($primary, 0.4);
+      }
+    }
+
+    .submit-note {
+      font-family: $font-body;
+      font-size: 0.8rem;
+      color: $text-muted;
+      max-width: 570px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+  }
+}
